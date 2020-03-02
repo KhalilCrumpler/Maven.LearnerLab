@@ -18,4 +18,15 @@ public class TestPerson {
         Assert.assertEquals(intExpected, actual2);
     }
     @Test
+    public void testSetName(){
+        //given
+        Person khalil = new Person();
+
+        //when
+        khalil.setName("Khalil");
+        String expected = "Khalil";
+
+        //then
+        Assert.assertEquals(expected, khalil.getName());
+    }
 }
