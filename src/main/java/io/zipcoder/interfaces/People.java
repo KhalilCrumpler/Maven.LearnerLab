@@ -1,9 +1,10 @@
 package io.zipcoder.interfaces;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-public class People {
+public class People implements Iterable<E> {
     public List<Person> personList;
 
     public People(){
@@ -48,5 +49,16 @@ public class People {
         this.personList.clear();
     }
 
-    
+    public Integer count(){
+        return this.personList.size();
+    }
+
+    public Object[] toArray(){
+        return this.personList.toArray();
+    }
+
+
+    public Iterator<E> iterator() {
+        return null;
+    }
 }
