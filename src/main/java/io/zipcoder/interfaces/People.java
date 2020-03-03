@@ -31,4 +31,22 @@ public class People {
         }
         return false;
     }
+
+    public void remove(Person person){
+        this.personList.remove(person);
+    }
+
+    public void remove(long id){
+        for(Person a : this.personList){
+            if(a.getId() == id){
+                this.personList.remove(a);
+            }
+        }
+    }
+
+    public void removeAll(){
+        this.personList.clear();
+    }
+
+    
 }
