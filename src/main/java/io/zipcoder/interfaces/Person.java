@@ -3,6 +3,7 @@ package io.zipcoder.interfaces;
 public class Person {
     private final long id;
     private String name;
+    private static int counter = 0;
 
     public Person(long id, String name) {
         this.id = id;
@@ -10,7 +11,8 @@ public class Person {
     }
 
    public Person(){
-        this.id = 1;
+        counter +=1;
+        this.id = counter;
         this.name = "";
    }
 

@@ -40,4 +40,20 @@ public class TestPeople {
         Assert.assertFalse(newList.personList.contains(khaliah));
         Assert.assertTrue(newList.personList.contains(khalil));
     }
+
+    @Test
+    public void testFindById(){
+        //given
+        Person khalil = new Person();
+        Person khaliah = new Person();
+        Person tom = new Person();
+        People newList = new People();
+        //when
+        newList.personList.add(khalil);
+        newList.personList.add(khaliah);
+        newList.personList.add(tom);
+        //then
+        System.out.println(tom.getId());
+
+    }
 }
