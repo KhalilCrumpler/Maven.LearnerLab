@@ -11,8 +11,7 @@ public class Person {
     }
 
    public Person(){
-        counter +=1;
-        this.id = counter;
+        this.id = 1;
         this.name = "";
    }
 
