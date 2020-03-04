@@ -53,8 +53,16 @@ public class TestPeople {
         newList.personList.add(khaliah);
         newList.personList.add(tom);
         //then
-        System.out.println(tom.getId());
-        System.out.println(khalil.getId());
-        System.out.println(khaliah.getId());
+
+        long khalilExpected = 1;
+        long khaliahExpected = 2;
+        long tomExpected = 3;
+        long khalilActual = khalil.getId();
+        long khaliahActual = khaliah.getId();
+        long tomActual = tom.getId();
+
+        Assert.assertEquals(khalilExpected, khalilActual);
+        Assert.assertEquals(khaliahExpected, khaliahActual);
+        Assert.assertEquals(tomExpected, tomActual);
     }
 }
