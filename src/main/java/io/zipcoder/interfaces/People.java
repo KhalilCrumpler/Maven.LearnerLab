@@ -59,6 +59,6 @@ public class People implements Iterable<Person> {
 
 
     public Iterator<Person> iterator() {
-        return null;
+        return this.personList.iterator();
     }
 }

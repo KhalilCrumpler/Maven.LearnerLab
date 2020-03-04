@@ -54,6 +54,7 @@ public class TestPeople {
         newList.personList.add(tom);
         //then
         System.out.println(tom.getId());
-
+        System.out.println(khalil.getId());
+        System.out.println(khaliah.getId());
     }
 }

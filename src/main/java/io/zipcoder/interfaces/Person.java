@@ -1,9 +1,12 @@
 package io.zipcoder.interfaces;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Person {
     private final long id;
     private String name;
     private static int counter = 0;
+    private static final AtomicInteger count = new AtomicInteger(0);
 
     public Person(long id, String name) {
         this.id = id;
@@ -11,7 +14,7 @@ public class Person {
     }
 
    public Person(){
-        this.id = 1;
+        this.id = counter++ - 2;
         this.name = "";
    }
 
