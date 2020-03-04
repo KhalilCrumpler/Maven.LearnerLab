@@ -6,6 +6,9 @@ import java.util.ArrayList;
 public class ZipCodeWilmington {
     private Students students = Students.getInstance();
     private Instructors instructors = Instructors.getInstance();
+    public ZipCodeWilmington(){
+        this.students = Students.getInstance();
+    }
 
     public void hostLecture(Teacher teacher, double numberOfHours){
         ArrayList<Person> newList = new ArrayList();
