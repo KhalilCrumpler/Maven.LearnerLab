@@ -10,14 +10,6 @@ final class Students extends People {
     public static Students getInstance(){
         return instance;
     }
-  //
-    //
-    //  static{
-      //  try {
-     //       instance = new Students();
-     //   }catch(Exception e){
-       //     throw new RuntimeException("Exception occurred in creating singleton instance");
-       // }
-   // }
+
 
 }
