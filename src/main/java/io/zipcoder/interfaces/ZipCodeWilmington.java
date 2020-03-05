@@ -4,8 +4,9 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class ZipCodeWilmington {
-    private Students students = Students.getInstance();
+    private Students students;
     private Instructors instructors = Instructors.getInstance();
+
     public ZipCodeWilmington(){
         this.students = Students.getInstance();
     }
@@ -18,7 +19,9 @@ public class ZipCodeWilmington {
             }
         }
         Learner[] learnerArray = new Learner[newList.size()];
-        System.arraycopy(newList, 0 , learnerArray, 0, newList.size());
+        System.arraycopy(newList.toArray(), 0 , learnerArray, 0, newList.size());
         teacher.lecture(learnerArray, numberOfHours);
     }
 }
+
+
