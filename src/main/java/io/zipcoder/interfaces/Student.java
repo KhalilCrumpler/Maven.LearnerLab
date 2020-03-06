@@ -16,4 +16,9 @@ public class Student extends Person implements Learner {
     public Double getTotalStudyTime() {
         return this.totalStudyTime;
     }
+    @Override
+    public String toString(){
+
+        return "Name: " + this.getName() + " Average score: " + this.getTotalStudyTime();
+    }
 }
