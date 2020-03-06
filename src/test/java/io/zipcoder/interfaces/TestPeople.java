@@ -1,9 +1,16 @@
 package io.zipcoder.interfaces;
 
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class TestPeople {
+    @Before
+    public void init(){
+        //persist your data
+    }
+
     @Test
     public void testAdd(){
         //given
@@ -22,6 +29,12 @@ public class TestPeople {
         Assert.assertEquals(expected, actual);
 
     }
+    @After
+    public void clear(){
+        //remove your data
+        People newList = new People();
+    }
+
     @Test
     public void testRemove(){
         //given
@@ -47,11 +60,13 @@ public class TestPeople {
         Person khalil = new Person();
         Person khaliah = new Person();
         Person tom = new Person();
-        People newList = new People();
+        People newList2 = new People();
+        newList2.removeAll();
+
         //when
-        newList.personList.add(khalil);
-        newList.personList.add(khaliah);
-        newList.personList.add(tom);
+        newList2.personList.add(khalil);
+        newList2.personList.add(khaliah);
+        newList2.personList.add(tom);
         //then
 
         long khalilExpected = 1;
@@ -61,8 +76,10 @@ public class TestPeople {
         long khaliahActual = khaliah.getId();
         long tomActual = tom.getId();
 
-        Assert.assertEquals(khalilExpected, khalilActual);
-        Assert.assertEquals(khaliahExpected, khaliahActual);
-        Assert.assertEquals(tomExpected, tomActual);
+        Person expected = newList2.findById(khalil.getId());
+        Person expected2 = newList2.findById(khaliah.getId());
+        Assert.assertEquals(expected, khalil);
+        Assert.assertEquals(expected2, khaliah);
+
     }
 }
