@@ -1,21 +1,22 @@
 package io.zipcoder.interfaces;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 public class Person {
-    private final long id;
+    private Long id = 0L;
     private String name;
-    private static int counter = 0;
-    private static final AtomicInteger count = new AtomicInteger(0);
 
-    public Person(long id, String name) {
-        this.id = id;
+
+
+    public Person(Long newId, String name) {
+        this.id = newId;
         this.name = name;
     }
 
    public Person(){
-        this.id = counter++ - 2;
+        this.id = 0L;
         this.name = "";
+   }
+   public Person(String name){
+        this.name = name;
    }
 
     public long getId(){
@@ -30,3 +31,4 @@ public class Person {
         this.name = name;
     }
 }
+

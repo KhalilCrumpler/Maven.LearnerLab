@@ -4,8 +4,8 @@ public class Student extends Person implements Learner {
 
     public double totalStudyTime = 0;
     public int count = 0;
-    public Student(){
-        count ++;
+    public Student(Long id, String name){
+        super(id, name);
     }
 
     public void learn(double numberOfHours) {
