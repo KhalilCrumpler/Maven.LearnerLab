@@ -7,7 +7,7 @@ public class TestPerson {
     @Test
     public void testConstructor(){
         //given
-        Person khalil = new Person(1,"Khalil");
+        Person khalil = new Person(1l,"Khalil");
         String expected = "Khalil";
         long intExpected = 1;
         //when

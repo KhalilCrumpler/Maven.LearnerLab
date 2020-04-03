@@ -6,21 +6,21 @@ import org.junit.Test;
 public class TestInstructor {
     @Test
     public void testImplementation(){
-        Instructor khalil = new Instructor();
+        Instructor khalil = new Instructor(1l, "khalil");
         boolean actual = khalil instanceof Teacher;
         Assert.assertTrue(actual);
     }
     @Test
     public void testInheritance(){
-        Instructor khalil = new Instructor();
+        Instructor khalil = new Instructor(1l, "khalil");
         boolean actual = khalil instanceof Person;
         Assert.assertTrue(actual);
     }
     @Test
     public void testTeach(){
         //given
-        Instructor khalil = new Instructor();
-        Student khaliah = new Student();
+        Instructor khalil = new Instructor(1l, "khalil");
+        Student khaliah = new Student(1l, "khaliah");
         double expected = 25;
 
         //when
@@ -32,9 +32,9 @@ public class TestInstructor {
     @Test
     public void testLecture(){
         //given
-        Instructor khalil = new Instructor();
-        Student khaliah = new Student();
-        Student john = new Student();
+        Instructor khalil = new Instructor(1l, "khalil");
+        Student khaliah = new Student(1l, "khaliah");
+        Student john = new Student(2l, "khalil");
         Student[] newArray = {khaliah, john};
         double numberOfHours = 10;
         //when

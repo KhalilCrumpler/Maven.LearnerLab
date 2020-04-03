@@ -36,19 +36,21 @@ public abstract class People<E extends Person> implements Iterable<E> {
     }
 
     public void removeAll(){
-        this.personList.clear();
+        personList.clear();
     }
 
-    public Integer count(){
-        return this.personList.size();
+    public int count(){
+        return personList.size();
     }
 
-    public Object[] toArray(){
-        return this.personList.toArray();
-    }
+    public abstract E[] listToArray();
 
 
     public Iterator<E> iterator() {
-        return this.personList.iterator();
+        return personList.iterator();
+    }
+
+    public List<E> getPersonList(){
+        return personList;
     }
 }

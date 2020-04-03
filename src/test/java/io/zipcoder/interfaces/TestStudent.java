@@ -4,24 +4,21 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class TestStudent {
+    Student khalil = new Student(1l, "Khalil");
     @Test
     public void testImplementation(){
         //given
-        Student khalil = new Student();
-        boolean expected = khalil instanceof Learner;
-        Assert.assertTrue(expected);
+        Assert.assertTrue(khalil instanceof Student);
     }
     @Test
     public void testInheritance(){
         //given
-        Student khalil = new Student();
         boolean expected = khalil instanceof Person;
         Assert.assertTrue(expected);
     }
     @Test
     public void testLearn(){
         //given
-        Student khalil = new Student();
         double expectedTime = 8;
 
         //when

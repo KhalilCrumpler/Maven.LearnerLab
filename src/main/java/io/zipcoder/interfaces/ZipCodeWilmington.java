@@ -3,46 +3,47 @@ package io.zipcoder.interfaces;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class ZipCodeWilmington {
-    private Students students;
-    private Instructors instructors = Instructors.getInstance();
-    private HashMap<Student, Double> studyMap = new HashMap();
-    public ZipCodeWilmington(){
-        this.students = Students.getInstance();
-        this.studyMap = new HashMap<Student, Double>();
+    private static final ZipCodeWilmington INSTANCE;
+    private static Students students;
+    private static Instructors instructors;
+
+    static{
+        try{
+            INSTANCE = new ZipCodeWilmington();
+            students = Students.getInstance();
+            instructors = Instructors.getInstance();
+        } catch(Exception e){
+            throw new RuntimeException("error");
+        }
+    }
+    private ZipCodeWilmington(){
+
+    }
+
+    public static ZipCodeWilmington getInstance(){
+        return INSTANCE;
     }
 
     public void hostLecture(Teacher teacher, double numberOfHours){
-        ArrayList<Object> newList = new ArrayList();
-        for(Object a : students.personList){
-            if(a instanceof Student){
-                newList.add(a);
-            }
-        }
-        Learner[] learnerArray = new Learner[newList.size()];
-        System.arraycopy(newList.toArray(), 0, learnerArray, 0, newList.size());
-        teacher.lecture(learnerArray, numberOfHours);
+        teacher.lecture(students.listToArray(), numberOfHours);
 
 
     }
 
 
 
-    public HashMap<Student, Double> getStudyMap(){
-        ArrayList<Object> newList = new ArrayList();
-        for(Object a : students.personList) {
-            if (a instanceof Student) {
-                newList.add(a);
-                this.studyMap.put((Student) a, ((Student) a).getTotalStudyTime());
-            }
-        }
-        return this.studyMap;
+    public LinkedHashMap<Student, Double> getStudyMap(){
+       LinkedHashMap<Student, Double> mapStudyTime = new LinkedHashMap<>();
+       for(Person a : students){
+           mapStudyTime.put((Student)a, (((Student) a).getTotalStudyTime()));
+       }
+       return mapStudyTime;
     }
 
-    public Students getStudents(){
-        return this.students;
-    }
+
 }
 
 
